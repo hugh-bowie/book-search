@@ -1,7 +1,7 @@
 {
   "name": "googlebooks-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1 align=\"center\">Book Search Engine 🚀</h1>",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -14,5 +14,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugh-bowie/book-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hugh-bowie/book-search/issues"
+  },
+  "homepage": "https://github.com/hugh-bowie/book-search#readme"
 }
