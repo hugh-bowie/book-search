@@ -1,5 +1,5 @@
 {
-  "name": "googlebooks-app",
+  "name": "google-book-search",
   "version": "1.0.0",
   "description": "<h1 align=\"center\">Book Search Engine 🚀</h1>",
   "main": "server/server.js",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/hugh-bowie/book-search/issues"
   },
-  "homepage": "https://github.com/hugh-bowie/book-search#readme"
+  "homepage": "https://github.com/hugh-bowie/book-search#readme",
+  "dependencies": {
+    "env": "0.0.2"
+  }
 }
