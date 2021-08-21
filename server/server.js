@@ -6,17 +6,19 @@ const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware
+  typeDefs, resolvers, context: authMiddleware
 });
 
-server.applyMiddleware({ app });
+//Error: You must `await server.start()` before calling `server.applyMiddleware()`
+//fix according to the apollo graphql docss
+async function startServer() {
+  await server.start();
+  server.applyMiddleware({ app });
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -36,3 +38,5 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
+
+startServer();
