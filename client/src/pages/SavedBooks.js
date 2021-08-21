@@ -9,11 +9,11 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
-  const [deleteBook, { error }] = useMutation(REMOVE_BOOK);
 
+  const { data } = useQuery(GET_ME);
   const userData = data?.me || {};
 
+  const [removeBook] = useMutation(REMOVE_BOOK);
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
@@ -27,7 +27,7 @@ const SavedBooks = () => {
 
     try {
       // use REMOVE_BOOK mutation
-      await deleteBook({
+      await removeBook({
         variables: { bookId }
       });
 
