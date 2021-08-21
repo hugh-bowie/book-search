@@ -26,10 +26,5 @@
     "url": "https://github.com/hugh-bowie/book-search/issues"
   },
   "homepage": "https://github.com/hugh-bowie/book-search#readme",
-  "dependencies": {
-    "apollo-server-express": "^3.1.2",
-    "graphql": "^15.5.1",
-    "heroku": "^7.57.0",
-    "if-env": "^1.0.4"
-  }
+  "dependencies": {}
 }
