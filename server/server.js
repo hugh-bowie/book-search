@@ -16,8 +16,12 @@ const server = new ApolloServer({
 //Error: You must `await server.start()` before calling `server.applyMiddleware()`
 //fix according to the apollo graphql docss
 async function startServer() {
-  await server.start();
-  server.applyMiddleware({ app });
+  try {
+    await server.start();
+    server.applyMiddleware({ app });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 app.use(express.urlencoded({ extended: true }));
