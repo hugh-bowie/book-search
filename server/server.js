@@ -23,6 +23,7 @@ async function startServer() {
     console.log(err);
   }
 }
+startServer();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,4 +44,3 @@ db.once('open', () => {
   });
 });
 
-startServer();
