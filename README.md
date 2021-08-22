@@ -22,12 +22,11 @@
 A MERN stack application using Google Books API that allows a user to login,
 search books and save favorites.
 
-#### [book-search.herokuapp](https://book-search-hb.herokuapp.com)
+#### [book-search.herokuapp](https://hb-book-search.herokuapp.com/)
 
 ## 🎬 Screenshot
 
-![book-search-mobile](./src/assets/images/book-search-mobile-2.gif)
-![book-search](./src/assets/images/book-search.gif)
+![book-search](./assets/book-search.gif)
 
 ## 🃏 User Story
 
