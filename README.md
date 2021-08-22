@@ -9,12 +9,12 @@
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/React-0099ff"  />
-    <img src="https://img.shields.io/badge/Node-33cc33" />
+    <img src="https://img.shields.io/badge/Apollo_Server-33cc33" />
     <img src="https://img.shields.io/badge/Express-orange" />
-    <img src="https://img.shields.io/badge/React_Router-99ccff"  />
-    <img src="https://img.shields.io/badge/Jest_Dom-99ff99"  />
+    <img src="https://img.shields.io/badge/graphQL-99ccff"  />
+    <img src="https://img.shields.io/badge/Jsonwebtoken-99ff99"  />
     <img src="https://img.shields.io/badge/Bootstrap-blueviolet"  />
-    <img src="https://img.shields.io/badge/Web_Vitals-ff4d4d"  />
+    <img src="https://img.shields.io/badge/mongoose-ff4d4d"  />
 </p>
 
 ## 📓 Description
