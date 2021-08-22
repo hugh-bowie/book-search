@@ -1,29 +1,29 @@
-// const routes = require('./routes');
-const path = require('path');
 const express = require('express');
-const db = require('./config/connection');
 const { ApolloServer } = require('apollo-server-express');
+
+const path = require('path');
+const db = require('./config/connection');
+
+// import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
-const PORT = process.env.PORT || 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
 
+// create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
-  typeDefs, resolvers, context: authMiddleware
+  typeDefs,
+  resolvers,
+  context: authMiddleware
 });
 
-//Error: You must `await server.start()` before calling `server.applyMiddleware()`
-//fix according to the apollo graphql docss
-async function startServer() {
-  try {
-    await server.start();
-    server.applyMiddleware({ app });
-  } catch (err) {
-    console.log(err);
-  }
+// integrate our Apollo server with the Express application as middleware
+async function startup() {
+  await server.start();
+  server.applyMiddleware({ app });
 }
-startServer();
+startup();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+})
 
 db.once('open', () => {
   app.listen(PORT, () => {
@@ -43,4 +43,3 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
-

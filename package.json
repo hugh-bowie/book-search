@@ -1,5 +1,5 @@
 {
-  "name": "google-book-search",
+  "name": "book-search",
   "version": "1.0.0",
   "description": "<h1 align=\"center\">Book Search Engine 🚀</h1>",
   "main": "server/server.js",
